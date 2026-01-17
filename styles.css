@@ -275,6 +275,10 @@ input::placeholder, textarea::placeholder{color:rgba(170,180,214,.7)}
   font-size:13px;
 }
 
+.hidden {
+  display: none;
+}
+
 /* MOBILE */
 @media (max-width: 980px){
   .grid{grid-template-columns: repeat(2, minmax(0,1fr))}
