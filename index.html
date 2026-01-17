@@ -216,22 +216,29 @@
         <div class="contact-card">
           <h3>Quote Form</h3>
 
-          <form name="quote" method="POST" data-netlify="true">
+          <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="quote" />
 
-            <input name="name" placeholder="Name" required />
-            <input name="phone" placeholder="Phone" required />
+            <p class="hidden">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+
+            <div class="row">
+              <input name="name" placeholder="Name" required />
+              <input name="phone" placeholder="Phone" required />
+            </div>
+
             <input name="vehicle" placeholder="Vehicle (Year / Make / Model)" required />
 
             <select name="service" required>
-              <option value="">Select Service</option>
+              <option value="" selected disabled>What do you need?</option>
               <option>Exterior Detail</option>
               <option>Interior Detail</option>
               <option>Full Detail</option>
               <option>Ceramic Protection</option>
             </select>
 
-            <textarea name="notes" placeholder="Notes"></textarea>
+            <textarea name="notes" rows="4" placeholder="Notes (pet hair, stains, smell, etc.)"></textarea>
 
             <button type="submit">Send Quote Request</button>
           </form>
